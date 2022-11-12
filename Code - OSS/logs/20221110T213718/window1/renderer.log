@@ -1,0 +1,2 @@
+2022-11-10 21:37:22.704 [info] [perf] Render performance baseline is 23ms
+2022-11-10 21:37:29.740 [error] Error while registering log channel file:///home/pavankumarp/.config/Code%20-%20OSS/logs/20221110T213718/userDataSync.log Timed out while waiting for file to be created
