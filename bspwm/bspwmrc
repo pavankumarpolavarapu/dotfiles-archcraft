@@ -59,10 +59,10 @@ workspaces() {
 	for monitor in `bspc query -M`; do
 		#bspc monitor ${monitor} -n "$name" -d 'I' 'II' 'III' 'IV' 'V' 'VI' 'VII' 'VIII'
         if [[ $name -eq 1 ]]; then
-            bspc monitor ${monitor} -d '' '' '' '' '' 
+            bspc monitor ${monitor} -d '' '' '' '' '' 
         fi
         if [[ $name -eq 2 ]]; then
-            bspc monitor ${monitor} -d '' '' '' '' ''
+            bspc monitor ${monitor} -d '' '' '' '' ''
         fi
 		let name++
 	done
@@ -94,12 +94,12 @@ bspc wm --adopt-orphans
 bspc rule -r *:*
 
 ## 1 > terminal (always open terminal on workspace-1)
-bspc rule -a Alacritty desktop='^1' follow=on focus=on
-bspc rule -a Xfce4-terminal desktop='^1' follow=on focus=on
+bspc rule -a Alacritty desktop='^6' follow=on focus=on
+bspc rule -a Xfce4-terminal desktop='^6' follow=on focus=on
 
 ## 2 > web (always open web browser on workspace-2)
-bspc rule -a firefox desktop='^2' follow=on focus=on
-bspc rule -a chromium desktop='^2' follow=on focus=on
+bspc rule -a firefox desktop='^1' follow=on focus=on
+bspc rule -a chromium desktop='^1' follow=on focus=on
 
 ## 3 > files (always open file manager on workspace-3)
 declare -a files=(Pcmanfm Thunar qBittorrent)
@@ -146,6 +146,12 @@ for i in ${floating[@]}; do
 bspc rule -a Conky state=floating manage=off
 bspc rule -a stalonetray state=floating manage=off
 
+## Always Full Screen Apps
+
+STEAM_APPS=~/.steam/steam/steamapps
+grep name $STEAM_APPS/appmanifest* | cut -d\" -f4 | while read game; do
+    bspc rule -a "*:*:$game" desktop="^10" state=fullscreen
+done
 ## Autostart -------------------------------------------------#
 
 # Kill if already running

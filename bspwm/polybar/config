@@ -78,7 +78,7 @@ scroll-up = bspc desktop -f prev.local
 scroll-down = bspc desktop -f next.local
 
 [bar/right]
-monitor = ${env:MONITOR:DP-0}
+monitor = ${env:MONITOR:DP-2}
 monitor-strict = false
 override-redirect = false
 

@@ -57,7 +57,7 @@ launch_bar() {
                 if [[ $m == "DP-4" ]]; then
                     MONITOR=$m polybar -q left -c "$DIR"/config &
                 fi
-                if [[ $m == "DP-0" ]]; then
+                if [[ $m == "DP-2" ]]; then
                     MONITOR=$m polybar -q right -c "$DIR"/config &
                 fi
             done

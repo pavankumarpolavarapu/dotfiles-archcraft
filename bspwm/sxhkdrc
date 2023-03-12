@@ -5,6 +5,10 @@
 
 ##---------- Keybindings for bspwm ----------##
 
+# dmenu
+super + space 
+    dmenu_run
+
 # Terminal (alacritty)
 super + Return
 	bspterm
@@ -125,7 +129,7 @@ super + f
     bspc node -t "~"fullscreen
 
 # Toggle beetwen floating & tiled
-super + space
+super + alt + space
     bspc node -t "~"{floating,tiled}
 
 # Pseudo Tiled & tiled mode
